@@ -1,5 +1,5 @@
-{% comment %} {{item.id}} -- {{item.item_name}} {% endcomment %}
-
+{%extends 'base.html'%}
+{%block body%}
  <h1>
     {{item.item_name}}
  </h1>
@@ -9,3 +9,4 @@
  <h2>
     {{item.item_price}}
  </h2>
+ {%endblock%}

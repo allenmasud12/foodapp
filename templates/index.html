@@ -1,3 +1,5 @@
+
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,17 +8,10 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="">
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark">
-            <a href="#" class="navbar-brand">FoodApp</a>
-            <div class="navbar">
-                <a class="nav-item nav-link" href="#">Add item</a>
-                <a class="nav-item nav-link" href="#">Delete item</a>
-                <a class="nav-item nav-link" href="#">View item</a>
-            </div>
-        </nav>
+        {%block body%}
         {%for item in item_list%}
         <ul>
             <li>
@@ -24,6 +19,7 @@
             </li>
         </ul>
         {% endfor %}
+        {%endblock %}
         
 
     </body>
