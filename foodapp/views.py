@@ -1,5 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from .forms import ItemForm
 from .models import Item
 from django.template import loader
 def index(request):
@@ -22,3 +24,11 @@ def detail(request, item_id):
         'item': item
     }
     return render(request, "detail.html", context)
+
+def create_item(request):
+    form = ItemForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+    return render(request, 'item-form.html', {'form': form}) 
