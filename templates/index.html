@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 <!DOCTYPE html>
 <html>
@@ -13,14 +12,26 @@
     <body>
         {%block body%}
         {%for item in item_list%}
-        <ul>
+        <div class= "row">
+            <div class= "col-md-3 offset-md-2">
+                <img class="card" height= "150px" src="{{item.item_image}}"/>
+            </div>
+            <div class= "col-md-4">
+                <h3> {{item.item_name}} </h3>
+                <h5> {{item.item_des}} </h5>
+                <h5> ${{item.item_price}} </h5>
+            </div>
+            <div class= "col-md-2">
+
+            </div>
+        </div>
+        {% endfor %}
+        {%endblock %}
+          <ul>
             <li>
                 <a href="{%url 'detail' item.id %}">  {{item.id}} -- {{item.item_name}}</a>
             </li>
         </ul>
-        {% endfor %}
-        {%endblock %}
-        
 
     </body>
 </html>
